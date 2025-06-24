@@ -16,8 +16,8 @@
 }
 
 :root {
-    --primary-blue: #1e40af;
-    --secondary-blue: #3b82f6;
+    --primary-blue: #00356b;
+    --secondary-blue: #0285dc;
     --light-blue: #dbeafe;
     --navy: #1e293b;
     --grey: #64748b;
@@ -113,6 +113,12 @@ header {
     gap: 0.75rem;
 }
 
+ .logo {
+      background: transparent;  /* Remove white background */
+      padding: 0;
+  }
+
+
 .logo-img {
     height: 45px;
     width: auto;
@@ -187,7 +193,7 @@ header {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
     font-family: 'YaleNew', 'Inter', sans-serif;
     line-height: 1.1;
@@ -201,6 +207,8 @@ header {
 .subtitle-text {
     color: var(--navy);
     font-weight: 600;
+    font-size: 2.5rem; 
+    font-family: 'Inter', sans-serif;
 }
 
 .hero-description {
@@ -212,7 +220,7 @@ header {
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--grey);
     margin-bottom: 2.5rem;
     line-height: 1.7;
@@ -230,7 +238,8 @@ header {
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 0.025em
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
 }
