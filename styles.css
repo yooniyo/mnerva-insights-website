@@ -300,7 +300,7 @@ header {
     }
     100% {
         transform: translateX(0);
-        opacity: 0.05;
+        opacity: 0.15;
     }
 }
 
