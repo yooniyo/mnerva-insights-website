@@ -117,6 +117,9 @@ height: 80px;
 width: auto;
 background: transparent;
  mix-blend-mode: multiply;
+     object-fit: cover;
+     object-position: center;
+     transform: scale(1.2);
 }
     
 .logo-img {
@@ -769,6 +772,9 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    object-fit: cover;
+     object-position: center;
+    transform: scale(1.2);
 }
 
 .footer-logo-img {
