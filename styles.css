@@ -310,89 +310,44 @@ header {
     height: 500px;
 }
 
-/* Organic fluid blobs inspired by the images */
+/* Floating image animation */
 .flow-circle {
-    position: absolute;
-    opacity: 0.8;
-    animation: organicFlow 8s ease-in-out infinite;
-    filter: blur(1px);
+    display: none;
 }
 
-.circle1 {
-    width: 200px;
-    height: 180px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 60%, var(--secondary) 100%);
-    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
-    top: 50px;
-    left: 100px;
-    animation-delay: 0s;
-}
-
-.circle2 {
-    width: 150px;
-    height: 140px;
-    background: linear-gradient(160deg, var(--accent) 0%, var(--secondary) 70%);
-    border-radius: 45% 55% 72% 28% / 35% 60% 40% 65%;
-    top: 180px;
-    right: 80px;
-    animation-delay: -3s;
-}
-
-.circle3 {
-    width: 120px;
-    height: 110px;
-    background: linear-gradient(200deg, var(--secondary) 0%, var(--primary) 80%);
-    border-radius: 80% 20% 30% 70% / 60% 75% 25% 40%;
-    bottom: 100px;
-    left: 60px;
-    animation-delay: -6s;
+.circle1, .circle2, .circle3 {
+    display: none;
 }
 
 .flow-path {
+    display: none;
+}
+
+/* Single floating image */
+.floating-water {
     position: absolute;
-    width: 350px;
-    height: 8px;
-    background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--primary) 70%, transparent 100%);
+    width: 300px;
+    height: 300px;
+    background-image: url('background-no animation.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    opacity: 0.3;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(25deg);
-    border-radius: 50px;
-    opacity: 0.4;
-    animation: flowingPath 6s ease-in-out infinite;
+    transform: translate(-50%, -50%);
+    animation: gentleFloat 6s ease-in-out infinite;
 }
 
-/* Organic flowing animations */
-@keyframes organicFlow {
+/* Gentle floating animation */
+@keyframes gentleFloat {
     0%, 100% {
-        transform: translateY(0px) rotate(0deg) scale(1);
-        border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
-    }
-    25% {
-        transform: translateY(-15px) rotate(2deg) scale(1.05);
-        border-radius: 48% 52% 68% 32% / 42% 58% 42% 58%;
+        transform: translate(-50%, -50%) translateY(0px);
+        opacity: 0.3;
     }
     50% {
-        transform: translateY(-8px) rotate(-1deg) scale(0.98);
-        border-radius: 58% 42% 35% 65% / 68% 32% 68% 32%;
-    }
-    75% {
-        transform: translateY(-20px) rotate(1deg) scale(1.02);
-        border-radius: 42% 58% 55% 45% / 35% 65% 35% 65%;
-    }
-}
-
-@keyframes flowingPath {
-    0%, 100% {
+        transform: translate(-50%, -50%) translateY(-10px);
         opacity: 0.4;
-        transform: translate(-50%, -50%) rotate(25deg) scaleX(1);
-    }
-    33% {
-        opacity: 0.7;
-        transform: translate(-50%, -50%) rotate(20deg) scaleX(1.1);
-    }
-    66% {
-        opacity: 0.5;
-        transform: translate(-50%, -50%) rotate(30deg) scaleX(0.9);
     }
 }
 
