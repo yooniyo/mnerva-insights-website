@@ -323,31 +323,53 @@ header {
     display: none;
 }
 
-/* Single floating image */
+/* Simple geometric shapes */
 .floating-water {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background-image: url('background-no animation.jpeg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    opacity: 0.3;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--secondary) 100%);
+    border-radius: 50%;
+    opacity: 0.2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: gentleFloat 6s ease-in-out infinite;
+    animation: gentleFloat 8s ease-in-out infinite;
+}
+
+.floating-water::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, var(--accent) 0%, var(--success) 100%);
+    border-radius: 50%;
+    top: -20px;
+    right: -30px;
+    opacity: 0.3;
+    animation: gentleFloat 6s ease-in-out infinite reverse;
+}
+
+.floating-water::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(225deg, var(--secondary) 0%, var(--primary) 100%);
+    border-radius: 50%;
+    bottom: -15px;
+    left: -25px;
+    opacity: 0.25;
+    animation: gentleFloat 10s ease-in-out infinite;
 }
 
 /* Gentle floating animation */
 @keyframes gentleFloat {
     0%, 100% {
-        transform: translate(-50%, -50%) translateY(0px);
-        opacity: 0.3;
+        transform: translateY(0px);
     }
     50% {
-        transform: translate(-50%, -50%) translateY(-10px);
-        opacity: 0.4;
+        transform: translateY(-15px);
     }
 }
 
