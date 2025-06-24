@@ -279,30 +279,28 @@ header {
 
 /* Simple slide-in water background */
 .floating-water {
-    position: absolute;
-    width: 600px;
-    height: 600px;
+    position: fixed;
+    width: 120vw;
+    height: 100vh;
     background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--secondary) 100%);
-    background-size: cover;
-    background-position: center;
-    opacity: 0.2;
-    top: 50%;
-    right: -200px;
-    transform: translateY(-50%);
-    animation: slideInOnce 2s ease-out forwards;
+    opacity: 0.05;
+    top: 0;
+    right: -50vw;
+    z-index: -1;
+    animation: slideInOnce 3s ease-out forwards;
     animation-delay: 0.5s;
-    border-radius: 30px;
+    border-radius: 50% 0% 0% 50%;
 }
 
 /* Simple slide-in animation - happens once and stays */
 @keyframes slideInOnce {
     0% {
-        transform: translateY(-50%) translateX(300px);
+        transform: translateX(50vw);
         opacity: 0;
     }
     100% {
-        transform: translateY(-50%) translateX(0px);
-        opacity: 0.15;
+        transform: translateX(0);
+        opacity: 0.05;
     }
 }
 
