@@ -775,7 +775,6 @@ footer {
     background: transparent;
     object-fit: contain;
     transform: scale(1.2);
-    filter: brightness(0) invert(1);
 }
 
 .footer-logo h3 {
