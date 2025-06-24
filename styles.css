@@ -113,7 +113,7 @@ header {
 }
 
  .logo-img {
-height: 45px;
+height: 60px;
 width: auto;
 background: transparent;
  mix-blend-mode: multiply;
@@ -772,7 +772,7 @@ footer {
 }
 
 .footer-logo-img {
-    height: 40px;
+    height: 60px;
     width: auto;
     margin-bottom: 0.5rem;
     background: transparent;
