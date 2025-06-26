@@ -195,10 +195,7 @@ Decision-making with clarity and peace in mind. We activate your organizational 
                                         <h4>Success!</h4>
                                         <p>Thank you for your message. We'll get back to you soon.</p>
                                     </div>
-                                    <form id="contactForm" name="contact" method="POST" action="/?success=true" data-netlify="true" data-netlify-honeypot="bot-field">
-                                        <input type="hidden" name="form-name" value="contact">
-                                        <input type="hidden" name="bot-field">
-                                        <input type="hidden" name="email-to" value="hello@mnervainsights.com">
+                                    <form id="contactForm" method="POST" action="https://formspree.io/f/meokpvln">
                                         <div class="form-row">
                                             <div class="form-group">
                                                 <label for="firstName">First name</label>
@@ -297,20 +294,45 @@ Decision-making with clarity and peace in mind. We activate your organizational 
 
         // Animation effects removed
 
-        // Form submission handler for Netlify Forms
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Form submission handler for Formspree
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
             const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            const successMessage = document.getElementById('successMessage');
+            
+            // Show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    this.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('There was an error sending your message. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again.');
+            } finally {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
-
-        // Check URL parameters for form submission success
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === 'true') {
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-        }
 
         // Privacy policy popup
         function openPrivacyPolicy() {
