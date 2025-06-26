@@ -332,6 +332,49 @@ header {
     color: white;
 }
 
+/* Calendar Button */
+.calendar-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.calendar-btn {
+    background: linear-gradient(135deg, var(--harvard-crimson), var(--yale-blue));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(165, 28, 48, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.calendar-btn:hover::before {
+    left: 100%;
+}
+
+.calendar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(165, 28, 48, 0.4);
+}
+
 /* Hero Visual */
 .hero-visual {
     display: flex;
