@@ -168,7 +168,7 @@ header {
     gap: 6rem;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 200;
 }
 
 .hero-text {
@@ -1886,7 +1886,7 @@ footer {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 2;
+    z-index: 1;
     overflow: hidden;
 }
 
@@ -1950,7 +1950,7 @@ footer {
 /* Professional opaque backgrounds for content sections */
 main {
     position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .approach, .services, .team, .media-coverage {
