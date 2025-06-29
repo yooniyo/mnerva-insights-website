@@ -783,7 +783,6 @@ header {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(15, 77, 146, 0.05);
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(5px);
@@ -811,13 +810,6 @@ header {
     transition: opacity 0.4s ease;
 }
 
-.logo-wrapper:hover::before {
-    opacity: 0.6;
-}
-
-.logo-wrapper:hover {
-    transform: scale(1.1);
-}
 
 .media-logo {
     max-width: 90px;
@@ -825,13 +817,9 @@ header {
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: all 0.3s ease;
     filter: grayscale(0.2) opacity(0.8);
 }
 
-.logo-wrapper:hover .media-logo {
-    transform: scale(1.1);
-}
 
 /* Staggered animation entrance */
 .logo-wrapper:nth-child(1) {
