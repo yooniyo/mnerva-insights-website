@@ -349,6 +349,59 @@ header {
 
 
 
+/* Organic wavy shapes background - Two shapes meeting in the middle for "Evidence MEETS Empathy" */
+.floating-water {
+    position: fixed;
+    width: 120vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.floating-water::before {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 60%;
+    background: linear-gradient(45deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.1));
+    clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 80%);
+    top: 20%;
+    left: -65%;
+    animation: slideFromLeft 3s ease-out 0.5s forwards;
+}
+
+.floating-water::after {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 70%;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(6, 182, 212, 0.08));
+    clip-path: polygon(0% 40%, 100% 20%, 100% 100%, 0% 100%);
+    top: 20%;
+    right: -65%;
+    animation: slideFromRight 3s ease-out 0.5s forwards;
+}
+
+/* Two shapes meeting in the middle - "Evidence MEETS Empathy" */
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(85%);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-85%);
+    }
+}
+
 /* Section styling */
 .container {
     max-width: 1200px;
@@ -1343,6 +1396,10 @@ footer {
         margin-top: 2rem;
     }
     
+    .floating-water {
+        width: 80vw; /* Adjust animation size for mobile */
+        height: 80vh;
+    }
     
     .container {
         padding: 0 1rem;
