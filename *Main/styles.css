@@ -124,7 +124,7 @@ header {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -409,7 +409,7 @@ header {
 
 /* Approach Section */
 .approach {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background: var(--white);
     position: relative;
 }
@@ -547,7 +547,7 @@ header {
 
 /* Services Section */
 .services {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background: var(--white);
     position: relative;
 }
@@ -889,7 +889,7 @@ header {
 
 /* Team Section */
 .team {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, var(--white) 100%);
     position: relative;
 }
@@ -964,7 +964,7 @@ header {
 
 /* Contact Section */
 .contact {
-    padding: 4rem 0 8rem 0;
+    padding: 3rem 0 4rem 0;
     background: linear-gradient(135deg, var(--dark) 0%, var(--yale-blue) 100%);
     color: white;
     position: relative;
@@ -982,7 +982,7 @@ header {
     font-size: 2.5rem;
     font-weight: 700;
     font-family: 'YaleNew', 'Inter', sans-serif;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     background: linear-gradient(135deg, white, var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
