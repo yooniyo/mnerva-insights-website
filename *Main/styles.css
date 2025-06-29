@@ -788,10 +788,12 @@ header {
     margin-top: 1.5rem;
 }
 
-/* Media Coverage Section */
+/* Media Coverage Section - Small Band */
 .media-coverage {
-    padding: 6rem 0;
-    background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+    padding: 3rem 0;
+    background: rgba(248, 250, 252, 0.6);
+    border-top: 1px solid rgba(15, 77, 146, 0.1);
+    border-bottom: 1px solid rgba(15, 77, 146, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -799,56 +801,43 @@ header {
 .media-coverage::before {
     content: '';
     position: absolute;
-    top: 30%;
-    left: -15%;
-    width: 400px;
-    height: 200px;
-    background: radial-gradient(ellipse, rgba(15, 77, 146, 0.04), transparent);
-    border-radius: 50%;
-    transform: rotate(-25deg);
-    z-index: 0;
-}
-
-.media-coverage::after {
-    content: '';
-    position: absolute;
-    bottom: 20%;
-    right: -10%;
-    width: 350px;
-    height: 150px;
-    background: radial-gradient(ellipse, rgba(165, 28, 48, 0.03), transparent);
-    border-radius: 50%;
-    transform: rotate(30deg);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(15, 77, 146, 0.02) 0%, 
+        rgba(165, 28, 48, 0.015) 50%, 
+        rgba(15, 77, 146, 0.02) 100%);
     z-index: 0;
 }
 
 .media-logos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
-    max-width: 1000px;
+    gap: 4rem;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 120px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(15, 77, 146, 0.08);
-    transition: all 0.4s ease;
+    width: 120px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(15, 77, 146, 0.05);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(15, 77, 146, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(15, 77, 146, 0.08);
 }
 
 .logo-wrapper::before {
@@ -877,23 +866,23 @@ header {
 }
 
 .logo-wrapper:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(15, 77, 146, 0.15);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(15, 77, 146, 0.1);
 }
 
 .media-logo {
-    max-width: 140px;
-    max-height: 80px;
+    max-width: 90px;
+    max-height: 50px;
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: all 0.4s ease;
-    filter: grayscale(0.3) opacity(0.8);
+    transition: all 0.3s ease;
+    filter: grayscale(0.5) opacity(0.7);
 }
 
 .logo-wrapper:hover .media-logo {
     filter: grayscale(0) opacity(1);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Staggered animation entrance */
@@ -953,42 +942,46 @@ header {
 /* Responsive design for media section */
 @media (max-width: 1024px) {
     .media-logos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 3rem;
     }
 }
 
 @media (max-width: 768px) {
     .media-coverage {
-        padding: 4rem 0;
+        padding: 2rem 0;
     }
     
     .media-logos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        padding: 1rem;
+        gap: 2rem;
+        padding: 0.5rem;
+        flex-wrap: wrap;
     }
     
     .logo-wrapper {
-        width: 140px;
-        height: 100px;
+        width: 100px;
+        height: 70px;
     }
     
     .media-logo {
-        max-width: 100px;
-        max-height: 60px;
+        max-width: 70px;
+        max-height: 40px;
     }
 }
 
 @media (max-width: 480px) {
     .media-logos {
-        grid-template-columns: 1fr;
         gap: 1rem;
+        justify-content: space-around;
     }
     
     .logo-wrapper {
-        width: 200px;
-        height: 120px;
+        width: 80px;
+        height: 60px;
+    }
+    
+    .media-logo {
+        max-width: 60px;
+        max-height: 35px;
     }
 }
 
