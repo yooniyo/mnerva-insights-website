@@ -1892,10 +1892,10 @@ footer {
 
 .watercolor-blue {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: -80%;
     width: 80%;
-    height: 80%;
+    height: 60%;
     background: 
         radial-gradient(ellipse at 40% 50%, rgba(15, 77, 146, 0.3) 0%, rgba(15, 77, 146, 0.15) 40%, transparent 70%),
         radial-gradient(ellipse at 60% 30%, rgba(30, 91, 184, 0.25) 0%, rgba(30, 91, 184, 0.1) 50%, transparent 80%),
@@ -1907,10 +1907,10 @@ footer {
 
 .watercolor-pink {
     position: absolute;
-    top: 15%;
+    top: 20%;
     right: -80%;
     width: 80%;
-    height: 75%;
+    height: 55%;
     background: 
         radial-gradient(ellipse at 60% 50%, rgba(165, 28, 48, 0.3) 0%, rgba(165, 28, 48, 0.15) 40%, transparent 70%),
         radial-gradient(ellipse at 40% 70%, rgba(199, 54, 80, 0.25) 0%, rgba(199, 54, 80, 0.1) 50%, transparent 80%),
@@ -1941,7 +1941,7 @@ footer {
         opacity: 0;
     }
     100% {
-        right: 30%;
+        right: 60%;
         transform: rotate(0deg) scale(1);
         opacity: 1;
     }
