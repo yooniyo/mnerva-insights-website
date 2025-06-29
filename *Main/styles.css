@@ -1540,8 +1540,34 @@ footer {
     transform: translateX(3px);
 }
 
+.strength-item:hover .strength-icon-img {
+    content: url('Icons/Team-white_star_42dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.svg');
+}
+
+.strength-item:nth-child(1):hover .strength-icon-img {
+    content: url('Icons/Team-white_star_42dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.svg');
+}
+
+.strength-item:nth-child(2):hover .strength-icon-img {
+    content: url('Icons/collaboration-white_exchange_42dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.svg');
+}
+
+.strength-item:nth-child(3):hover .strength-icon-img {
+    content: url('Icons/conversion-white_path_42dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.svg');
+}
+
+.strength-item:nth-child(4):hover .strength-icon-img {
+    content: url('Icons/accessibility-white_new_42dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.svg');
+}
+
 .strength-icon {
     transition: all 0.2s ease;
+}
+
+.strength-icon-img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
 }
 
 .strength-item:hover .strength-icon {
