@@ -364,7 +364,7 @@ header {
     position: absolute;
     width: 65%;
     height: 60%;
-    background: linear-gradient(45deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.1));
+    background: linear-gradient(45deg, rgba(99, 102, 241, 0.18), rgba(6, 182, 212, 0.14));
     clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 80%);
     top: 20%;
     left: -65%;
@@ -376,7 +376,7 @@ header {
     position: absolute;
     width: 65%;
     height: 70%;
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(6, 182, 212, 0.08));
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.18), rgba(6, 182, 212, 0.12));
     clip-path: polygon(0% 40%, 100% 20%, 100% 100%, 0% 100%);
     top: 20%;
     right: -65%;
