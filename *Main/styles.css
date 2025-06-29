@@ -1941,7 +1941,7 @@ footer {
         opacity: 0;
     }
     100% {
-        right: 0%;
+        right: 30%;
         transform: rotate(0deg) scale(1);
         opacity: 1;
     }
