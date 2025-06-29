@@ -812,16 +812,33 @@ header {
     z-index: 0;
 }
 
-.media-logos {
+.media-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 4rem;
-    max-width: 800px;
+    justify-content: space-between;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    gap: 3rem;
+}
+
+.media-title h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yale-blue);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.media-logos {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .logo-wrapper {
@@ -866,8 +883,7 @@ header {
 }
 
 .logo-wrapper:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(15, 77, 146, 0.1);
+    transform: scale(1.1);
 }
 
 .media-logo {
@@ -877,12 +893,11 @@ header {
     height: auto;
     object-fit: contain;
     transition: all 0.3s ease;
-    filter: grayscale(0.5) opacity(0.7);
+    filter: grayscale(0.2) opacity(0.8);
 }
 
 .logo-wrapper:hover .media-logo {
-    filter: grayscale(0) opacity(1);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* Staggered animation entrance */
@@ -941,8 +956,12 @@ header {
 
 /* Responsive design for media section */
 @media (max-width: 1024px) {
+    .media-content {
+        gap: 2rem;
+    }
+    
     .media-logos {
-        gap: 3rem;
+        gap: 2.5rem;
     }
 }
 
@@ -951,9 +970,20 @@ header {
         padding: 2rem 0;
     }
     
+    .media-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .media-title h3 {
+        font-size: 1.3rem;
+    }
+    
     .media-logos {
         gap: 2rem;
-        padding: 0.5rem;
+        justify-content: center;
         flex-wrap: wrap;
     }
     
@@ -971,7 +1001,7 @@ header {
 @media (max-width: 480px) {
     .media-logos {
         gap: 1rem;
-        justify-content: space-around;
+        justify-content: center;
     }
     
     .logo-wrapper {
