@@ -1886,7 +1886,7 @@ footer {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 999;
+    z-index: 2;
     overflow: hidden;
 }
 
@@ -1950,7 +1950,7 @@ footer {
 /* Professional opaque backgrounds for content sections */
 main {
     position: relative;
-    z-index: 6;
+    z-index: 10;
 }
 
 .approach, .services, .team, .media-coverage {
