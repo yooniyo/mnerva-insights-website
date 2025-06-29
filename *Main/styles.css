@@ -1898,6 +1898,17 @@ footer {
     overflow: hidden;
 }
 
+/* Make main content areas more opaque to show animation behind */
+main {
+    position: relative;
+    z-index: 2;
+}
+
+.hero, .approach, .services, .team, .media-coverage, .contact {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(2px);
+}
+
 .slide-left {
     position: absolute;
     top: 0;
@@ -1905,7 +1916,7 @@ footer {
     width: 60%;
     height: 100%;
     background: linear-gradient(135deg, #0f4d92 0%, #1e5bb8 50%, #2d6dd4 100%);
-    animation: slideInFromLeft 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: slideInFromLeft 3s ease-out forwards;
 }
 
 .slide-right {
@@ -1915,7 +1926,7 @@ footer {
     width: 60%;
     height: 100%;
     background: linear-gradient(225deg, #a51c30 0%, #c73650 50%, #e85070 100%);
-    animation: slideInFromRight 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: slideInFromRight 3s ease-out forwards;
 }
 
 .slide-left::after,
@@ -1933,29 +1944,21 @@ footer {
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);
-        opacity: 0;
-    }
-    70% {
-        transform: translateX(10%);
-        opacity: 0.8;
+        opacity: 1;
     }
     100% {
         transform: translateX(0);
-        opacity: 0.6;
+        opacity: 0.8;
     }
 }
 
 @keyframes slideInFromRight {
     0% {
         transform: translateX(100%);
-        opacity: 0;
-    }
-    70% {
-        transform: translateX(-10%);
-        opacity: 0.8;
+        opacity: 1;
     }
     100% {
         transform: translateX(0);
-        opacity: 0.6;
+        opacity: 0.8;
     }
 }
