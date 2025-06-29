@@ -352,10 +352,10 @@ header {
 /* Organic wavy shapes background - Two shapes meeting in the middle for "Evidence MEETS Empathy" */
 .floating-water {
     position: absolute;
-    width: 120%;
-    height: 100%;
+    width: 120vw;
+    height: 100vh;
     top: 0;
-    left: -10%;
+    left: 0;
     z-index: -1;
 }
 
