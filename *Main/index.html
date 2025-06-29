@@ -28,6 +28,12 @@
         </nav>
     </header>
 
+    <!-- Frontpage Animation Overlay -->
+    <div class="frontpage-animation">
+        <div class="slide-left"></div>
+        <div class="slide-right"></div>
+    </div>
+
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
@@ -437,6 +443,33 @@ Behavioral sciences consulting for your organization's urgent and chronic relati
                 </html>
             `);
         }
+
+        // Frontpage animation control
+        const frontpageAnimation = document.querySelector('.frontpage-animation');
+        const homeSection = document.querySelector('#home');
+        
+        // Hide animation after initial load and when scrolling away from home
+        setTimeout(() => {
+            if (frontpageAnimation) {
+                frontpageAnimation.style.opacity = '0';
+                frontpageAnimation.style.transition = 'opacity 1s ease-out';
+                setTimeout(() => {
+                    frontpageAnimation.style.display = 'none';
+                }, 1000);
+            }
+        }, 4000); // Hide after 4 seconds to let animation complete
+
+        // Show animation only when at the top of page (home section)
+        window.addEventListener('scroll', function() {
+            if (!frontpageAnimation) return;
+            
+            const scrollPosition = window.scrollY;
+            if (scrollPosition < 100) {
+                // Near top of page - could show again if desired
+                // frontpageAnimation.style.display = 'block';
+                // frontpageAnimation.style.opacity = '0.5';
+            }
+        });
     </script>
 </body>
 </html>
