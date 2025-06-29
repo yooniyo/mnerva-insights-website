@@ -8,6 +8,15 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'UoqMunThenKhung';
+    src: url('Fonts/UoqMunThenKhung.ttf') format('truetype'),
+         url('Fonts/UoqMunThenKhung.woff') format('woff'),
+         url('Fonts/UoqMunThenKhung.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -234,13 +243,17 @@ header {
 .gradient-text {
     color: #6b46c1;
     font-weight: 500;
+    font-family: 'UoqMunThenKhung', 'YaleNew', 'Inter', serif;
+    font-size: 76px;
+    line-height: 1.1;
 }
 
 .subtitle-text {
     color: #4a4a4a;
+    font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    font-size: 1.6rem;
     font-style: italic;
+    font-size: 1.6rem;
 }
 
 .hero-description {
