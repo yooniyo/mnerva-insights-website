@@ -967,17 +967,6 @@ header {
     position: relative;
 }
 
-.contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M200,300 Q400,100 600,300 T1000,300 L1000,1000 L0,1000 Z" fill="rgba(165,28,48,0.1)"/></svg>');
-    background-size: cover;
-    z-index: 0;
-}
 
 .contact-content {
     text-align: center;
@@ -1984,7 +1973,7 @@ main {
     z-index: 10;
 }
 
-.hero, .approach, .services, .team, .media-coverage {
+.approach, .services, .team, .media-coverage {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     border-radius: 0;
