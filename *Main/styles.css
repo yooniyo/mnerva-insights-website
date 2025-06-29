@@ -1904,10 +1904,12 @@ main {
     z-index: 2;
 }
 
-.hero, .approach, .services, .team, .media-coverage, .contact {
+.hero, .approach, .services, .team, .media-coverage {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(2px);
 }
+
+/* Contact section keeps its original Yale dark blue background */
 
 .slide-left {
     position: absolute;
