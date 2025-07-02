@@ -15,7 +15,7 @@
         <nav>
             <div class="nav-container">
                 <div class="logo">
-                    <img src="svg Logo Transparent/logo-brand-black-transparent.svg" alt="MNerva Insights" class="logo-img">
+                    <img src="svg Logo Transparent/logo-brand-white-transparent.svg" alt="MNerva Insights" class="logo-img">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
@@ -39,18 +39,16 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        <span class="gradient-text">Evidence meets empathy</span><br>
+                        <span class="gradient-text">Evidence meets <span id="typewriter-text">empathy</span></span><br>
                         <span class="subtitle-text">Amplifying Women's Strengths in Business since 2014</span>
                     </h1>
                     <p class="hero-subtitle">
-Behavioral sciences consulting for your organization's urgent and chronic relational problems with your team, customers, partners and competitors
+                        Organizational consulting for urgent and chronic relational problems <br>with your team, customers, partners and competitors with Behavioral Sciences
                     </p>
                     <div class="cta-buttons">
                         <a href="#contact" class="cta-primary">Work With Us</a>
                         <a href="#approach" class="cta-secondary">Learn More</a>
                     </div>
-                </div>
-                <div class="hero-visual">
                 </div>
             </div>
         </section>
@@ -100,7 +98,7 @@ Behavioral sciences consulting for your organization's urgent and chronic relati
             <div class="container">
                 <div class="section-header">
                     <h2>Our Team</h2>
-                    <p class="section-subtitle">Yale and Harvard-trained Women and Allies in Organizational Behavior, Business, and Psychology Bridging Science and Practice</p>
+                    <p class="section-subtitle">Yale and Harvard-trained Women and Allies in Organizational Behavior, <br>Business, and Psychology Bridging Science and Practice</p>
                 </div>
                 <div class="team-content">
                     <div class="team-strengths">
@@ -136,7 +134,7 @@ Behavioral sciences consulting for your organization's urgent and chronic relati
             <div class="container">
                 <div class="section-header">
                     <h2>Our Services</h2>
-                    <p class="section-subtitle">Applied research and consulting focused on women's leadership, collaboration, and culture transformation</p>
+                    <p class="section-subtitle">Applied research and consulting focused on women's leadership, <br>collaboration, and culture transformation</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card">
@@ -317,7 +315,42 @@ Behavioral sciences consulting for your organization's urgent and chronic relati
             });
         });
 
-        // Animation effects removed
+        // Typewriter effect
+        const words = ['empathy', 'experience', 'emotions', 'earnest', 'evolution', 'engagement', 'emergence'];
+        let currentWordIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter-text');
+        
+        function typeWriter() {
+            const currentWord = words[currentWordIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                
+                if (currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentWordIndex = (currentWordIndex + 1) % words.length;
+                    setTimeout(typeWriter, 500); // Pause before typing next word
+                    return;
+                }
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+                
+                if (currentCharIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeWriter, 2000); // Pause at end of word
+                    return;
+                }
+            }
+            
+            setTimeout(typeWriter, isDeleting ? 50 : 100);
+        }
+        
+        // Start typewriter effect after page loads
+        setTimeout(typeWriter, 1000);
 
         // Form submission handler for Formspree
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
