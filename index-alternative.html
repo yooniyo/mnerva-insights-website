@@ -1,1109 +1,1148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MNerva Insights - Evidence Meets Empathy</title>
-    <link rel="icon" type="image/svg+xml" href="svg Logo Transparent/logo-white-transparent.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-black: #0a0a0a;
-            --secondary-black: #111111;
-            --tertiary-black: #1a1a1a;
-            --accent-purple: #8b5cf6;
-            --accent-blue: #3b82f6;
-            --accent-cyan: #06b6d4;
-            --text-white: #ffffff;
-            --text-gray: #a1a1aa;
-            --text-light-gray: #d4d4d8;
-            --border-color: #27272a;
-            --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
-            --gradient-secondary: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(6, 182, 212, 0.1) 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-black);
-            color: var(--text-white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            color: var(--text-light-gray);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: var(--text-white);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        /* Main Container */
-        main {
-            padding-top: 80px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .gradient-text {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle-text {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            font-weight: 400;
-            margin-top: 0.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light-gray);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .cta-primary, .cta-secondary {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .cta-primary {
-            background: var(--gradient-primary);
-            color: white;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: var(--text-white);
-            border: 2px solid var(--border-color);
-        }
-
-        .cta-secondary:hover {
-            border-color: var(--accent-purple);
-            background: rgba(139, 92, 246, 0.1);
-        }
-
-        .hero-visual {
-            height: 500px;
-            background: var(--gradient-secondary);
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Section Styling */
-        section {
-            padding: 6rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-light-gray);
-            margin-bottom: 1rem;
-        }
-
-        .approach-description {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Approach Grid */
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .approach-item {
-            background: var(--secondary-black);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .approach-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .approach-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .approach-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-purple);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .approach-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-secondary);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .approach-icon img {
-            width: 32px;
-            height: 32px;
-            filter: brightness(0) saturate(100%) invert(100%);
-        }
-
-        .approach-item h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-white);
-        }
-
-        .approach-item p {
-            color: var(--text-gray);
-            line-height: 1.7;
-        }
-
-        /* Team Section */
-        .team-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .strengths-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .strength-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--secondary-black);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .strength-item:hover {
-            border-color: var(--accent-blue);
-            background: var(--tertiary-black);
-        }
-
-        .strength-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-secondary);
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-        .strength-icon img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) saturate(100%) invert(100%);
-        }
-
-        .team-philosophy {
-            background: var(--secondary-black);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-        }
-
-        .team-philosophy h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-white);
-        }
-
-        .team-philosophy p {
-            color: var(--text-gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: var(--secondary-black);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-secondary);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .service-icon img {
-            width: 32px;
-            height: 32px;
-            filter: brightness(0) saturate(100%) invert(100%);
-        }
-
-        .service-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-white);
-        }
-
-        .service-card p {
-            color: var(--text-gray);
-            line-height: 1.7;
-        }
-
-        .service-card strong {
-            color: var(--text-white);
-        }
-
-        /* Media Coverage */
-        .media-coverage {
-            background: var(--secondary-black);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .media-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .media-title h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-light-gray);
-        }
-
-        .media-logos {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .logo-wrapper {
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .logo-wrapper:hover {
-            opacity: 1;
-        }
-
-        .media-logo {
-            height: 40px;
-            width: auto;
-            filter: brightness(0) saturate(100%) invert(70%);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .contact-info h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-white);
-        }
-
-        .contact-info p {
-            color: var(--text-gray);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-
-        .contact-details {
-            margin-top: 2rem;
-        }
-
-        .contact-item {
-            margin-bottom: 1rem;
-            color: var(--text-light-gray);
-        }
-
-        .contact-item a {
-            color: var(--accent-purple);
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* Form Styling */
-        .contact-form {
-            background: var(--secondary-black);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-        }
-
-        .contact-form h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: var(--text-white);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-light-gray);
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: var(--tertiary-black);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-white);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-purple);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-gray);
-        }
-
-        .form-checkboxes {
-            margin: 2rem 0;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-            margin-top: 0.1rem;
-        }
-
-        .checkbox-group label {
-            margin-bottom: 0;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .privacy-link {
-            color: var(--accent-purple);
-            text-decoration: none;
-        }
-
-        .privacy-link:hover {
-            color: var(--accent-blue);
-        }
-
-        .success-message {
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .success-message h4 {
-            color: #22c55e;
-            margin-bottom: 0.5rem;
-        }
-
-        .success-message p {
-            color: var(--text-light-gray);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--secondary-black);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 0 2rem;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .footer-logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .footer-tagline {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-gray);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-white);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-bottom p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                gap: 1rem;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .hero-visual {
-                height: 300px;
-            }
-
-            .team-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .media-logos {
-                gap: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .nav-container {
-                padding: 1rem;
-            }
-
-            section {
-                padding: 4rem 0;
-            }
-
-            .approach-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .media-logos {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Institute for Governance &amp; Generational Systems | MNERVA Insights</title>
+<meta name="description" content="We build human systems. Governance, generational continuity, and the human capacities that sustain families and institutions.">
+<link rel="icon" type="image/svg+xml" href="svg Logo Transparent/logo-black-transparent.svg">
+<style>/* Modern dark theme design */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'YaleNew';
+    src: url('YaleNew-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-display: swap;
+}
+
+:root {
+    --primary-black: #0a0a0a;
+    --secondary-black: #111111;
+    --tertiary-black: #1a1a1a;
+    --accent-purple: #8b5cf6;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --text-white: #ffffff;
+    --text-gray: #a1a1aa;
+    --text-light-gray: #d4d4d8;
+    --border-color: #27272a;
+    --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+    --gradient-secondary: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(6, 182, 212, 0.1) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-black);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 8px;
+}
+
+.logo-img {
+    height: 120px;
+    width: auto;
+    background: transparent;
+    object-fit: contain;
+    transform: scale(1.2);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-light-gray);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--text-white);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Main Container */
+main {
+    padding-top: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+}
+
+.hero-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle-text {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light-gray);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+.cta-secondary {
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--border-color);
+}
+
+.cta-secondary:hover {
+    border-color: var(--accent-purple);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.hero-visual {
+    height: 400px;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.blob-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 1;
+    z-index: 10;
+}
+
+.blob-blue {
+    width: 60px;
+    height: 60px;
+    background: #3b82f6;
+    top: 10px;
+    left: 10px;
+    animation: simpleMove 3s ease-in-out infinite alternate;
+}
+
+.blob-red {
+    width: 50px;
+    height: 50px;
+    background: #ef4444;
+    top: 100px;
+    left: 200px;
+    animation: simpleMove 3s ease-in-out infinite alternate;
+}
+
+#typewriter-text {
+    border-right: 2px solid var(--accent-purple);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { border-color: var(--accent-purple); }
+    51%, 100% { border-color: transparent; }
+}
+
+/* Section Styling */
+section {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-light-gray);
+    margin-bottom: 1rem;
+}
+
+.approach-description {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Approach Grid */
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.approach-item {
+    background: var(--secondary-black);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.approach-item:hover::before {
+    transform: scaleX(1);
+}
+
+.approach-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.approach-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.approach-icon img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.approach-item h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+}
+
+.approach-item p {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+/* Team Section */
+.team-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.strength-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--secondary-black);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.strength-item:hover {
+    border-color: var(--accent-blue);
+    background: var(--tertiary-black);
+}
+
+.strength-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-secondary);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.strength-icon img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.team-philosophy {
+    background: var(--secondary-black);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.team-philosophy h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+}
+
+.team-philosophy p {
+    color: var(--text-gray);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.team-strengths h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card {
+    background: var(--secondary-black);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.service-icon img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.service-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+}
+
+.service-card p {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+.service-card strong {
+    color: var(--text-white);
+}
+
+/* Media Coverage */
+.media-coverage {
+    background: #ffffff;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 0;
+}
+
+.media-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.media-title h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.media-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-wrapper {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.logo-wrapper:hover {
+    opacity: 1;
+}
+
+.media-logo {
+    height: 40px;
+    width: auto;
+    filter: none;
+    object-fit: contain;
+}
+
+/* Contact Section */
+.contact {
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, white, var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.contact-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form-area {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+}
+
+.contact-info p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    margin-top: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 1rem;
+    color: var(--text-light-gray);
+}
+
+.contact-item a {
+    color: var(--accent-purple);
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: var(--accent-blue);
+}
+
+/* Form Styling */
+.contact-form {
+    background: var(--secondary-black);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.contact-form h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-white);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-light-gray);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--tertiary-black);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-gray);
+}
+
+.form-checkboxes {
+    margin: 2rem 0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.1rem;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.privacy-link {
+    color: var(--accent-purple);
+    text-decoration: none;
+}
+
+.privacy-link:hover {
+    color: var(--accent-blue);
+}
+
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.success-message h4 {
+    color: #22c55e;
+    margin-bottom: 0.5rem;
+}
+
+.success-message p {
+    color: var(--text-light-gray);
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-black);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo-img {
+    height: 120px;
+    width: auto;
+    margin-bottom: 0.5rem;
+    background: transparent;
+    object-fit: contain;
+    transform: scale(1.2);
+}
+
+.footer-tagline {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-bottom p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .hero-visual {
+        height: 300px;
+        max-width: 350px;
+    }
+
+    .team-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .media-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust navigation for mobile */
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .logo-img {
+        height: 55px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        white-space: normal;
+        line-height: 1.2;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+
+    .hero-visual {
+        height: 300px;
+        max-width: 350px;
+        margin-top: 2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .approach-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .team-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 80%;
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .footer-logo-img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .nav-container {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .approach-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .approach-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Governance and Generational Systems */
+html { scroll-padding-top: 100px; }
+.nav-container { min-height: 80px; height: auto; gap: 1.5rem; }
+.logo { padding-top: 0; }
+.logo-img { height: 76px; max-width: 220px; transform: none; }
+.hero { min-height: min(800px, calc(100svh - 80px)); }
+.hero-content { display: block; margin-left: 0; max-width: 920px; }
+.institute-name, .section-label { color: var(--text-light-gray); font-size: .875rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.institute-name { margin-bottom: 1.75rem; }
+.hero-title { font-size: clamp(2.75rem, 6.5vw, 5.5rem); line-height: 1.1; }
+.hero-question { font-size: clamp(1.35rem, 2.5vw, 1.9rem); line-height: 1.45; max-width: 800px; margin: 1.75rem 0 1rem; }
+.hero-subtitle { max-width: 740px; }
+.section-header { max-width: 920px; margin-left: auto; margin-right: auto; }
+.section-header .section-label { margin-bottom: 1rem; }
+.section-header .section-subtitle { line-height: 1.8; }
+.approach-description { max-width: 780px; font-size: 1.125rem; margin-top: 1.5rem; }
+.approach-grid, .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; gap: 1.5rem; }
+.approach-item, .service-card { padding: 2rem; }
+.service-card .section-label { margin-bottom: 1rem; }
+.service-card p + p, .team-philosophy p + p { margin-top: 1rem; }
+.guiding-question { border-left: 2px solid var(--accent-blue); padding: .5rem 0 .5rem 2rem; max-width: 870px; margin: 4rem auto 0; }
+.guiding-question > p:last-child { font-size: clamp(1.35rem, 2.5vw, 1.9rem); line-height: 1.5; margin-top: 1rem; }
+.contact h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.contact { overflow-wrap: anywhere; }
+.cta-primary, .cta-secondary { display: inline-block; cursor: pointer; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 5px; }
+.footer-tagline { max-width: 310px; }
+@media (max-width: 1000px) {
+    .approach-grid, .services-grid { grid-template-columns: 1fr; max-width: 760px; }
+    .nav-menu { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-container { padding-top: .5rem; padding-bottom: .5rem; }
+}
+@media (max-width: 768px) {
+    header { position: sticky; }
+    main { padding-top: 0; }
+    html { scroll-padding-top: 150px; }
+    .nav-container { flex-direction: column; gap: .5rem; }
+    .logo-img { height: 52px; }
+    .nav-menu { justify-content: center; gap: .5rem 1rem; padding-bottom: .75rem; }
+    .nav-menu a { font-size: .875rem; }
+    .hero { min-height: auto; padding: 4rem 0; }
+    .hero-content { text-align: left; padding: 0; }
+    .hero-title { font-size: clamp(2.5rem, 9vw, 4rem); }
+    .institute-name { font-size: .875rem; letter-spacing: .07em; }
+    .cta-buttons { align-items: stretch; }
+    .cta-primary, .cta-secondary { width: 100%; text-align: center; }
+    .guiding-question { padding-left: 1.25rem; }
+    .footer-logo { flex-direction: column; }
+    .footer-logo-img { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.service-topics { color: var(--text-gray); padding-left: 1.25rem; margin: 1rem 0; line-height: 1.7; }
+.service-topics li + li { margin-top: .5rem; }
+.service-card h4 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .75rem; color: var(--text-white); }
+.service-card a { color: #93c5fd; text-decoration: underline; text-underline-offset: .2em; }
+.service-card a:hover { color: var(--text-white); }
+
+/* Multi-page navigation and reading layouts */
+header { position: sticky; }
+main { padding-top: 0; }
+.nav-container { min-height: 90px; }
+.nav-menu a[aria-current="page"] { color: #fff; text-decoration: underline; text-decoration-color: var(--accent-blue); text-underline-offset: .5em; }
+.menu-toggle { display: none; padding: .65rem 1rem; background: var(--secondary-black); color: var(--text-white); border: 1px solid var(--border-color); border-radius: 6px; font: inherit; cursor: pointer; }
+.hero { min-height: min(690px, calc(100svh - 90px)); padding: 5rem 0; }
+.page-intro { padding: 4rem 0; }
+.breadcrumb { font-size: .875rem; color: var(--text-gray); margin-bottom: 2.5rem; }
+.page-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.15; margin: 1rem 0 1.5rem; max-width: 980px; color: var(--text-white); }
+.page-lead { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--text-light-gray); max-width: 850px; }
+.reading-grid { max-width: 950px; }
+.detail-block + .detail-block { margin-top: 3.5rem; }
+.detail-block h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; line-height: 1.3; margin-bottom: 1rem; }
+.detail-block p { font-size: 1.125rem; color: var(--text-light-gray); line-height: 1.8; }
+.detail-block p + p { margin-top: 1rem; }
+.detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+.detail-grid .detail-block + .detail-block { margin-top: 0; }
+.reading-grid a, .prose a, .breadcrumb a, .text-link { color: #93c5fd; text-decoration: underline; text-underline-offset: .25em; }
+.text-link { font-size: 1rem; display: inline-block; margin-top: 1.25rem; }
+.overview-links { display: flex; flex-direction: column; align-items: flex-start; }
+.service-card h3 a { color: var(--text-white); text-decoration: none; }
+.service-card h3 a:hover { text-decoration: underline; }
+.page-contact { padding: 3rem 0; }
+.page-contact h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; margin-bottom: 1.5rem; }
+.contact .page-title { margin-left: auto; margin-right: auto; }
+.prose { max-width: 900px; color: var(--text-light-gray); }
+.prose h2, .prose h3 { color: var(--text-white); margin-top: 2rem; margin-bottom: 1rem; }
+.prose p, .prose ul { margin: 1rem 0; }
+.prose ul { padding-left: 1.5rem; }
+.footer-links { flex-wrap: wrap; justify-content: flex-end; gap: 1rem 1.5rem; max-width: 490px; }
+.footer-logo-img { height: 80px; transform: none; }
+@media (max-width: 1100px) {
+    .nav-container { flex-wrap: wrap; flex-direction: row; padding: .75rem 1rem; gap: .5rem; }
+    .logo-img { height: 60px; max-width: 200px; }
+    .js .menu-toggle { display: block; }
+    .nav-menu { flex-basis: 100%; justify-content: flex-start; padding: .75rem 0; gap: .75rem 1.5rem; }
+    .js .nav-menu { display: none; }
+    .js .nav-menu.is-open { display: flex; }
+}
+@media (max-width: 768px) {
+    .nav-container { min-height: 76px; }
+    .logo-img { height: 50px; max-width: 180px; }
+    .hero { min-height: auto; padding: 4rem 0; }
+    .page-intro { padding: 3rem 0; }
+    .detail-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-links { justify-content: center; }
+    .footer-logo-img { height: 70px; }
+    .page-title { font-size: clamp(2rem, 9vw, 3.5rem); }
+}
+</style>
+
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="svg Logo Transparent/logo-brand-white-transparent.svg" alt="MNerva Insights" class="logo-img">
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#approach">Our Approach</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="home" class="hero">
+<body><header><nav aria-label="Main navigation"><div class="nav-container"><a href="index.html" class="logo" aria-label="MNERVA Insights home"><img src="svg Logo Transparent/logo-brand-white-transparent.svg" alt="MNERVA Insights" class="logo-img"></a><button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" type="button">Menu</button><ul class="nav-menu" id="main-menu"><li><a href="approach.html">Approach</a></li><li><a href="field-programs.html">Field Programs</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="education.html">Education</a></li><li><a href="research.html">Research</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div></nav></header><main><section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1 class="hero-title">
-                            <span class="gradient-text">Evidence meets empathy</span><br>
-                            <span class="subtitle-text"></span>
-                        </h1>
-                        <p class="hero-subtitle">
-                            Behavioral sciences consulting for your organization's urgent and chronic relational challenges with your team, customers, partners and competitors
-                        </p>
+                        <p class="institute-name">Institute for Governance &amp; Generational Systems</p>
+                        <h1 class="hero-title"><span class="gradient-text">We build human systems.</span></h1>
+                        <p class="hero-question">How do families and institutions make good decisions across generations?</p>
+                        <p class="hero-subtitle">We help families and institutions design how decisions are made, power is distributed, conflict is resolved, and responsibility passes from one generation to the next.</p>
                         <div class="cta-buttons">
-                            <a href="#contact" class="cta-primary">Work With Us</a>
-                            <a href="#approach" class="cta-secondary">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="hero-visual"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="approach" class="approach">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Approach</h2>
-                    <p class="section-subtitle">We don't Fix Problems; We Invite Solutions to Emerge</p>
-                    <p class="approach-description">
-                        Like water finding its easiest path, we help organizations navigate relational challenges with the least resistance possible.
-                    </p>
-                </div>
-                <div class="approach-grid">
-                    <div class="approach-item">
-                        <div class="approach-icon">
-                            <img src="Icons/bar_chart_4_bars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Evidence-Based" class="approach-icon-img">
-                        </div>
-                        <h3>Evidence-Driven Solutions</h3>
-                        <p>We are your scientist best friends. We are Yale and Harvard-trained organizational behavioral scientists and psychologists, designing solutions with rigorous sciences and data-driven understanding of human dynamics.</p>
-                    </div>
-                    <div class="approach-item">
-                        <div class="approach-icon">
-                            <img src="Icons/frame_person_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Experience-Centered" class="approach-icon-img">
-                        </div>
-                        <h3>Experience-Integrated Approach</h3>
-                        <p>Your lived experience is honored. We amplify your practical wisdom with cutting edge research findings and pragmatic frameworks to give you clarity and new insights, so you have confidence in your decision-making.</p>
-                    </div>
-                    <div class="approach-item">
-                        <div class="approach-icon">
-                            <img src="Icons/unlimited_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Potential-Seeking" class="approach-icon-img">
-                        </div>
-                        <h3>Potential-Seeking</h3>
-                        <p>Growth comes from pulling yourself closer to your goal, not dwelling on resisting your shortcomings. With a promotion-focused approach emphasizing growth, gains, and aspirations, we uncover your team's unique strengths, amplify authentic leadership, and drive your organization toward bold, impactful outcomes.</p>
-                    </div>
-                    <div class="approach-item">
-                        <div class="approach-icon">
-                            <img src="Icons/results_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Result-Accelerating" class="approach-icon-img">
-                        </div>
-                        <h3>Result-Accelerating</h3>
-                        <p>The journey matters, but we do want to get you to the place you want to be. We design behavioral interventions that are sustainable and implementable to invite change with lasting impact rather than forcing it.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="team">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Team</h2>
-                    <p class="section-subtitle">Women and Allies in Behavioral Science and Business<br>Led by Yale- and Harvard-trained experts in organizational behavior, psychology, and business, our team bridges rigorous science with practical application. We champion ambitious women and foster inclusive, high-performing organizations.</p>
-                </div>
-                <div class="team-content">
-                    <div class="team-strengths">
-                        <h3>Our Expertise</h3>
-                        <div class="strengths-grid">
-                            <div class="strength-item">
-                                <span class="strength-icon"><img src="Icons/Team_star_42dp_1F1F1F_FILL0_wght400_GRAD0_opsz40.svg" alt="Team Dynamics" class="strength-icon-img"></span>
-                                <span>Team Dynamics Solutions</span>
-                            </div>
-                            <div class="strength-item">
-                                <span class="strength-icon"><img src="Icons/Collaboration_exchange_42dp_1F1F1F_FILL0_wght400_GRAD0_opsz40.svg" alt="Collaboration" class="strength-icon-img"></span>
-                                <span>Collaboration & Negotiations</span>
-                            </div>
-                            <div class="strength-item">
-                                <span class="strength-icon"><img src="Icons/conversion_path_42dp_1F1F1F_FILL0_wght400_GRAD0_opsz40.svg" alt="Market Strategy" class="strength-icon-img"></span>
-                                <span>Marketing Decision-Making Strategy</span>
-                            </div>
-                            <div class="strength-item">
-                                <span class="strength-icon"><img src="Icons/disability_new_42dp_1F1F1F_FILL0_wght400_GRAD0_opsz40.svg" alt="Neurodiversity" class="strength-icon-img"></span>
-                                <span>Neurodiversity & Disabilities</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-philosophy">
-                        <h3>Our Philosophy</h3>
-                        <p>We believe every leader has unique strengths that can create ripple effects of positive change; We want to amplify that, and help you build your influence. Our approach integrates rigorous research findings with a track record of real-world results, helping leaders flow around barriers rather than being forced to break through. Like water that adapts to its environment while maintaining its essential nature, we offer strategies for you to navigate complex systems while staying true to your authentic selves.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="services">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Services</h2>
-                    <p class="section-subtitle">Applied research and consulting focused on women's leadership, collaboration, and culture transformation</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="Icons/org_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Organizational Consulting" class="service-icon-img">
-                        </div>
-                        <h3>Organizational Consulting</h3>
-                        <p>Transform your organization with strategic, data-driven insights. Our organizational consulting services focus on enterprise-wide challenges, delivering tailored solutions through comprehensive assessments, stakeholder analysis, and advanced analytics. Designed to optimize culture, structure, and performance, our engagements are available on a retainer basis for ongoing partnership or as project-based initiatives for specific objectives, ensuring measurable impact across your organization.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="Icons/leader_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Leadership Coaching" class="service-icon-img">
-                        </div>
-                        <h3>Leadership Coaching</h3>
-                        <p>Elevate individual performance with personalized, evidence-based coaching for executives and aspiring leaders. Our behavioral science-driven programs enhance confidence, decision-making, and influence, tailored to your unique strengths and career goals. Delivered through structured, time-bound packages, our coaching empowers individuals to achieve professional excellence and navigate complex leadership challenges with authenticity and impact.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="Icons/team_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Team Building Training" class="service-icon-img">
-                        </div>
-                        <h3>Embedded Consulting</h3>
-                        <p>Accelerate your team's success with our embedded consulting services. Our expert consultants integrate seamlessly into your organization, acting as in-house advisors to drive critical projects, enhance team dynamics, and resolve complex challenges. Available on a retainer for sustained collaboration or as project-based engagements, this hands-on approach ensures practical, results-oriented outcomes tailored to your team's needs.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="Icons/relation_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Relational Wellness Class" class="service-icon-img">
-                        </div>
-                        <h3>Relational Wellness Program</h3>
-                        <p>Strengthen workplace relationships through our customized Relational Wellness Programs. Designed specifically for your company, these interactive group classes equip employees with practical tools to navigate complex dynamics, foster collaboration, and enhance personal influence. Tailored to your organization's culture and goals, these programs drive professional success and well-being through structured, company-specific sessions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="media" class="media-coverage">
-            <div class="container">
-                <div class="media-content">
-                    <div class="media-title">
-                        <h3>Media Coverage</h3>
-                    </div>
-                    <div class="media-logos">
-                        <div class="logo-wrapper">
-                            <img src="Icons/BBC_Radio_2021_(stacked).svg" alt="BBC Radio" class="media-logo">
-                        </div>
-                        <div class="logo-wrapper">
-                            <img src="Icons/Scientific American.png" alt="Scientific American" class="media-logo">
-                        </div>
-                        <div class="logo-wrapper">
-                            <img src="Icons/Yale Daily.webp" alt="Yale Daily" class="media-logo">
-                        </div>
-                        <div class="logo-wrapper">
-                            <img src="Icons/china daily.jpg" alt="China Daily" class="media-logo">
+                            <a href="contact.html" class="cta-primary">Work With Us</a>
+                            <a href="approach.html" class="cta-secondary">Our Approach</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-main">
-                        <h2>Ready to amplify your natural flow?</h2>     
-                        <div class="contact-form-area">
-                            <div class="contact-grid">
-                                <div class="contact-info">
-                                    <h3>Get Started</h3>
-                                    <p>MNerva Insights is a boutique consulting firm focused on helping organizations build various types of collaboration in stakeholders, transform organizational culture, and advance women's leadership with behavioral sciences. Our referral-based practice is built on experts in Organizational Behavior, Business, and Psychology from Yale and Harvard who value both intelligence and heart and honor your lived experience. Our clients span from governments across the world to startups in their launching stages. With powerful mechanisms that deliver results, we've been making it happen for organizations of all sizes and nature across the globe since 2014.</p>
-                                    
-                                    <div class="contact-details">
-                                        <div class="contact-item">
-                                            <strong>Email:</strong>
-                                            <a href="mailto:hello@mnervainsights.com">hello@mnervainsights.com</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="contact-form">
-                                    <h3>Send us a message</h3>
-                                    <div id="successMessage" class="success-message" style="display: none;">
-                                        <h4>Success!</h4>
-                                        <p>Thank you for your message. We'll get back to you soon.</p>
-                                    </div>
-                                    <form id="contactForm" method="POST" action="https://formspree.io/f/meokpvln">
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="firstName">First name</label>
-                                                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="lastName">Last name</label>
-                                                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="email">Your email</label>
-                                            <input type="email" id="email" name="email" placeholder="example@dot.com" required>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="company">Company</label>
-                                            <input type="text" id="company" name="company" placeholder="Your company">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="inquiryType">Inquiry type</label>
-                                            <select id="inquiryType" name="inquiryType" required>
-                                                <option value="">What service are you interested in?</option>
-                                                <option value="organizational-strategy">Comprehensive Organizational Consulting</option>
-                                                <option value="team-building">Team Building & Negotiation</option>
-                                                <option value="leadership-coaching">Women's Leadership Development</option>
-                                                <option value="relational-wellness">Relational Wellness Small Class</option>
-                                                <option value="other">Other</option>
-                                            </select>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="message">How can we help you?</label>
-                                            <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
-                                        </div>
-                                        
-                                        <div class="form-checkboxes">
-                                            <div class="checkbox-group">
-                                                <input type="checkbox" id="privacy" name="privacy" required>
-                                                <label for="privacy">I agree to the <a href="#" onclick="openPrivacyPolicy()" class="privacy-link">MNerva Insights privacy policy</a>.</label>
-                                            </div>
-                                            <div class="checkbox-group">
-                                                <input type="checkbox" id="communications" name="communications">
-                                                <label for="communications">I allow MNerva Insights to send me email communications</label>
-                                            </div>
-                                        </div>
-                                        
-                                        <button type="submit" class="cta-primary" id="submitBtn">Send Message</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="svg Logo Transparent/logo-brand-white-transparent.svg" alt="MNerva Insights" class="footer-logo-img">
-                    <div>
-                        <p class="footer-tagline">Evidence meets empathy. Women's strengths amplified</p>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#approach">Our Approach</a>
-                    <a href="#services">Services</a>
-                    <a href="#team">Our Team</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MNerva Insights. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handler for Formspree
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        </section><section class="work-overview"><div class="container"><div class="section-header"><h2>Our Work</h2><p class="section-subtitle">Three connected arms. One question: what allows human systems to endure?</p></div><div class="services-grid"><article class="service-card"><p class="section-label">Field Programs</p><h3><a href="field-programs.html">Travel &amp; Yacht Retreats</a></h3><p>Shared travel, facilitated family conversations, and space for presence, rest, and body awareness.</p><a class="text-link" href="field-programs.html">Explore Field Programs</a></article><article class="service-card"><p class="section-label">Practice</p><h3><a href="consulting.html">Governance Consulting</a></h3><p>Evidence-informed strategic advice for families, businesses, and family enterprises navigating governance, ownership, and succession.</p><a class="text-link" href="consulting.html">Explore Consulting</a></article><article class="service-card"><p class="section-label">Education &amp; Research</p><h3>Power, Mindfulness &amp; Succession</h3><p>Research and courses on how people make decisions, navigate power, and carry responsibility across generations.</p><div class="overview-links"><a class="text-link" href="education.html">Explore Education</a><a class="text-link" href="research.html">Explore Research</a></div></article></div></div></section></main><footer><div class="container"><div class="footer-content"><div class="footer-logo"><img src="svg Logo Transparent/logo-brand-white-transparent.svg" alt="MNERVA Insights" class="footer-logo-img"><p class="footer-tagline">Institute for Governance &amp; Generational Systems<br>We build human systems.</p></div><div class="footer-links"><a href="about.html">About</a><a href="founder.html">Founder</a><a href="team.html">Team</a><a href="board.html">Board</a><a href="media.html">Media</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div></div><div class="footer-bottom"><p>&copy; 2026 MNERVA Insights. All rights reserved.</p></div></div></footer><script>document.documentElement.classList.add('js');
+const menuButton = document.querySelector('.menu-toggle');
+const mainMenu = document.getElementById('main-menu');
+menuButton?.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!expanded));
+    mainMenu.classList.toggle('is-open', !expanded);
+});
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        mainMenu.classList.remove('is-open');
+        menuButton.focus();
+    }
+});
+const requestedInquiry = new URLSearchParams(window.location.search).get('inquiry');
+const inquirySelect = document.getElementById('inquiryType');
+if (inquirySelect && Array.from(inquirySelect.options).some(option => option.value === requestedInquiry)) {
+    inquirySelect.value = requestedInquiry;
+}
+// Form submission handler for Formspree
+        document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submitBtn');
@@ -1142,90 +1181,5 @@
             }
         });
 
-        // Privacy policy popup
-        function openPrivacyPolicy() {
-            const popup = window.open('', 'privacy', 'width=800,height=600,scrollbars=yes,resizable=yes');
-            popup.document.write(`
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <title>MNerva Insights Privacy Policy</title>
-                    <style>
-                        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; background: #0a0a0a; color: #ffffff; }
-                        h1, h2 { color: #8b5cf6; }
-                        .container { max-width: 800px; margin: 0 auto; }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <h1>MNerva Insights – Online Privacy Policy</h1>
-                        <p><strong>Last updated: December 2024</strong></p>
-                        
-                        <p>MNerva Insights, LLC provides professional services, including behavioral consulting, women's leadership development, organizational behavior strategy, and coaching services to private and publicly-traded businesses, non-profit and governmental organizations, and individuals. This Privacy Policy applies to information about you obtained on mnervainsights.com (the "Website") and in connection with the services we provide (the Website and services collectively referred to herein as the "Services") by MNerva Insights, LLC (referred to herein as "MNerva Insights," "we," "us," "our").</p>
-                        
-                        <p>This Privacy Policy describes how we may collect, use, and disclose information that identifies, relates to, or could reasonably be linked to you ("Personal Information"); the choices you have regarding our use of your Personal Information; how we safeguard the Personal Information we collect; and how to contact us regarding our privacy practices.</p>
-                        
-                        <p>By accessing or otherwise using the Services, you agree to the collection, use, and disclosure practices and other activities as described in this Privacy Policy.</p>
-                        
-                        <h2>Personal Information we collect</h2>
-                        
-                        <h3>Information you provide directly to us</h3>
-                        <p>We collect certain Personal Information about you that you provide to us through the Services. For example, you may provide Personal Information when you fill out the Website's Contact Us form and other online forms; register for and attend events, such as webinars, conferences, and seminars; post public comments on certain Website content; access client portals; sign up for email newsletters; engage with our Services, seek customer support, or answer surveys.</p>
-                        
-                        <p>Personal Information you may submit through the Website includes your name, email address, company affiliation, job title, postal address, phone number, employment-related details, information related to services we provide you, and any other Personal Information you choose to disclose. In some cases, you may choose not to provide Personal Information, but this may prevent you from being able to use certain features of the Services.</p>
-                        
-                        <h3>Information collected automatically through online technologies</h3>
-                        <p>We may also automatically collect certain information about you when you access or use the Website ("Usage Information"). Usage Information may include IP address, device identifier, browser type, operating system, information about your use of the Website (e.g., pages and content viewed), referring/exit pages, and data regarding network-connected hardware (e.g., computer or mobile device).</p>
-                        
-                        <h2>Use of Personal Information</h2>
-                        <p>We and our service providers use your Personal Information for various purposes depending on the types of information we have collected from and about you, to:</p>
-                        <ul>
-                            <li>Respond to your requests for information and provide you with more effective and efficient service</li>
-                            <li>In accordance with applicable law, contact you by email, postal mail, or phone regarding our products, services, surveys, research studies, promotions, special events, and other subjects that we think may be of interest to you</li>
-                            <li>Customize the content you see on the Services</li>
-                            <li>Help us better understand your interests and needs and improve the Services</li>
-                            <li>Secure our Services and resolve technical issues being reported</li>
-                            <li>Comply with any procedures, laws, and regulations that apply to us</li>
-                            <li>Establish, exercise, or defend our legal rights</li>
-                        </ul>
-                        
-                        <h2>Disclosure of Personal Information</h2>
-                        <p>We will disclose your information in the following ways:</p>
-                        <ul>
-                            <li><strong>Service Providers:</strong> We provide access to or disclose your information to select third parties who perform services on our behalf</li>
-                            <li><strong>Protection of Us and Others:</strong> We may access, retain and disclose information if required by law or to protect rights, property or safety</li>
-                            <li><strong>Business Transfers:</strong> Personal Information may be transferred in business transactions</li>
-                            <li><strong>Consent:</strong> We may disclose your information when you affirmatively consent</li>
-                        </ul>
-                        
-                        <h2>Your rights and choices</h2>
-                        <p>Your local laws may permit you to request that we:</p>
-                        <ul>
-                            <li>Provide access to and/or a copy of certain Personal Information we hold about you</li>
-                            <li>Update Personal Information which is out of date or incorrect</li>
-                            <li>Delete certain Personal Information which we are holding about you</li>
-                            <li>Restrict the way that we process and disclose certain of your Personal Information</li>
-                        </ul>
-                        
-                        <p>To exercise these rights, please email us at hello@mnervainsights.com</p>
-                        
-                        <h2>Security and retention</h2>
-                        <p>We use a variety of safeguards to protect your Personal Information, including physical, technical, and administrative measures. We retain Personal Information for only so long as necessary for the intended purpose for which it was collected, unless a longer retention period is required or permitted by law.</p>
-                        
-                        <h2>Children's privacy</h2>
-                        <p>This Website is not intended for children under 13, and we do not knowingly collect information from children under 13.</p>
-                        
-                        <h2>Contact Us</h2>
-                        <p>If you have any questions about this Privacy Policy, please email us at hello@mnervainsights.com</p>
-                        
-                        <p><em>© 2025 MNerva Insights, LLC. All rights reserved.</em></p>
-                        
-                        <button onclick="window.close()" style="background: #8b5cf6; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">Close</button>
-                    </div>
-                </body>
-                </html>
-            `);
-        }
-    </script>
-</body>
+        </script></body>
 </html>

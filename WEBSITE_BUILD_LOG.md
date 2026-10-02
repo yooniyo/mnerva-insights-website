@@ -1,5 +1,20 @@
 # MNerva Insights Website Build Log
 
+## October 2026 — Governance & Generational Systems
+
+- Repositioned MNERVA as Institute for Governance & Generational Systems.
+- Replaced the one-page presentation with independent static pages in the existing `*Main` publish directory.
+- Pages: Home, Approach, Field Programs, Consulting, Education, Research, About, Founder, Team, Board, Contact, Media, Privacy.
+- Homepage introduces the institute and links to the three arms; substantive content lives on dedicated pages.
+- Travel includes one- or two-family yacht retreats, facilitated governance conversations, and biodynamic craniosacral work, without healing or therapy marketing language.
+- Research distinguishes current mindfulness and organizational behavior work from planned family systems and succession research.
+- Founder biography is grounded in Yushi Zhang's April 2026 academic CV; team and board biographies await confirmed information.
+- Consulting scope includes family management, succession, ownership and equity allocation strategy, team development, and organizational behavior.
+- Kept the existing Formspree endpoint and email address; added inquiry selection from service-page links.
+- Kept the current GitHub and Netlify hosting arrangement.
+- Shared `styles.css` and `site.js` support navigation, mobile menu, and contact behavior.
+
+
 ## Project Overview
 Built a professional consulting website for MNerva Insights, focusing on women's leadership and behavioral science consulting.
 
