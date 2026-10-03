@@ -1,15 +1,23 @@
-# MNERVA review direction — October 2, 2026
+# MNerva Insights — institutional narrative review
 
-Not approved for public launch. The main branch serves the holding page only.
+Review draft only. Do not merge into main or deploy the full site without the user's approval. The public main branch serves the holding message and small MNERVA INSIGHTS wordmark.
 
-## Visual direction
-Deep ink blue, warm off-white Georgia serif, quiet brass accents, open editorial layouts. All former purple/blue gradients, rounded service cards, decorative icons, and oversized branded imagery removed. Large margins and generous intervals. No invented travel imagery.
+## Identity and appearance
+Use MNerva Insights as the proposed wordmark and prose spelling. Pure white background, deep charcoal typography, restrained warm-grey accents, ample margins, serif headlines, unboxed editorial sections. The user's intended impression is clean, assured, and understated.
 
-## Architecture
-Home presents only four stable divisions: Consulting, Research, Education, Field Programs. Approach, About, and Contact have independent pages. Founder, Team, Board, Media, and Privacy remain separate pages. Family Governance Retreats and Power, Negotiation & Succession are child pages, clearly identified as in development. Projects can change without changing the homepage divisions.
+## Homepage story
+1. Who we are and whom we serve: an institute working with families, family enterprises, and organizations on durable human systems.
+2. Shared challenge: decisions, power, conflict, responsibility, and continuity when leadership changes.
+3. Approach: structures and the human capacities required to use them, spanning the individual, relationships, and continuity over time.
+4. Connected practice: research informs understanding; consulting designs arrangements; education develops people's capacities; field programs provide settings for shared learning and sustained conversation. These are connected modes of work, not a mandatory four-stage client package.
+5. People and stewardship: restrained links to Founder, Team, Board, and Advisers. Once appointments and descriptions are confirmed, this space can show two or three actual names with one-line roles. Do not invent affiliations, endorsements, or a functioning board.
+6. Invitation to discuss the visitor's family or organization.
 
-## Photography
-Responsive spaces reserved for a wide homepage image, landscape and portrait images on Field Programs, and a wide photograph within the retreat project. These empty spaces are for review; final launch can hide empty image regions until genuine photography is supplied. The eventual field archive can add captions, dates, and further project stories independently.
+## Page architecture and photography
+The four stable divisions retain independent pages. Current programs have separate child pages. All homepage field photography and placeholders are removed. Field Programs and the retreat detail page retain landscape and portrait spaces for genuine future photographs and activity records.
 
-## Discussion still needed
-Relative emphasis of families and family enterprises versus institutions on first arrival. Whether Research and Education should be presented as separate divisions or two parts of one arm. Names and biographies for Team and Board remain pending.
+## People
+Founder, Team, Board, and Advisers are separate pages. Board membership and advisory roles must be described distinctly. Team, board, and adviser biographies await confirmation. Research references describe the founder's own work, not an institutional partnership or endorsement.
+
+## Validation
+Verify local links, all page headings, responsive layout rules, and the conversation preview's navigation. No public launch of this draft is authorized.
