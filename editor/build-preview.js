@@ -1,0 +1,12 @@
+const fs=require('node:fs');
+const path=require('node:path');
+const {buildModel}=require('./model');
+const model=buildModel(path.join(__dirname,'../*Main'));
+const css=fs.readFileSync(path.join(__dirname,'editor.css'),'utf8');
+const shell=fs.readFileSync(path.join(__dirname,'editor-shell.html'),'utf8');
+const code=fs.readFileSync(path.join(__dirname,'editor.js'),'utf8');
+const data=JSON.stringify(model).replace(/</g,'\\u003c');
+const output=process.argv[2]||'/workspace/mnerva-editable-draft.html';
+fs.writeFileSync(output,'<style>'+css+'</style>\n'+shell+'\n<script>window.mnervaEditorBootstrap={model:'+data+',restoreBrowser:true};</script>\n<script>'+code+'</script>');
+if(fs.statSync(output).size>1000000)throw Error('Preview exceeds size limit.');
+console.log(output);

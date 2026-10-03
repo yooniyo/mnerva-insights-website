@@ -1,0 +1,73 @@
+<div id="mnerva-editor">
+  <div class="ed-bar">
+    <strong>mnerva editor</strong>
+    <label>Page <select id="ed-page" aria-label="Page"></select></label>
+    <button id="ed-mode" type="button">Preview</button>
+    <button id="ed-undo" type="button">Undo</button>
+    <button id="ed-redo" type="button">Redo</button>
+    <button id="ed-save" type="button">Save draft</button>
+    <button id="ed-export" type="button">Export website</button>
+  </div>
+  <p id="ed-status" role="status" aria-live="polite">Select an element on the page to edit it.</p>
+  <div class="ed-layout">
+    <aside class="ed-inspector" aria-label="Element editor">
+      <button id="ed-view-selection" type="button">View selected element</button>
+      <label>Selected element <select id="ed-element"></select></label>
+      <button id="ed-parent" type="button">Select parent</button>
+      <details open><summary>Text and links</summary>
+        <label>Text <textarea id="ed-text" rows="5"></textarea></label>
+        <button id="ed-apply-text" type="button">Apply text</button>
+        <label>Link destination <input id="ed-href" type="text"></label>
+        <label>Image description <input id="ed-alt" type="text"></label>
+      </details>
+      <details open><summary>Typography</summary>
+        <label>Font <select id="ed-font"></select></label>
+        <label>Upload font <input id="ed-font-file" type="file" accept=".woff2,.woff,.ttf,.otf"></label>
+        <label>Uploaded font name <input id="ed-font-name" type="text" placeholder="My font"></label>
+        <button id="ed-upload-font" type="button">Add font</button>
+        <div class="ed-pair">
+          <label>Size <input id="ed-size" type="text" placeholder="48px or clamp(...)"></label>
+          <label>Weight <select id="ed-weight"><option value="">Default</option><option>400</option><option>500</option><option>600</option><option>700</option></select></label>
+        </div>
+        <div class="ed-pair"><label>Line height <input id="ed-line" type="text" placeholder="1.2"></label><label>Letter spacing <input id="ed-spacing" type="text" placeholder="-0.03em"></label></div>
+        <label>Alignment <select id="ed-align"><option value="">Default</option><option>left</option><option>center</option><option>right</option></select></label>
+        <label>Text color <input id="ed-color" type="color" value="#111d3b"></label>
+        <label>Apply font to <select id="ed-font-scope"><option value="element">Selected element</option><option value="headings">All headings</option><option value="body">All body text</option></select></label>
+        <button id="ed-apply-font" type="button">Apply font</button>
+      </details>
+      <details><summary>Background and images</summary>
+        <label>Background color <input id="ed-background" type="color" value="#ffffff"></label>
+        <label>Upload background or image <input id="ed-image-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif"></label>
+        <button id="ed-upload-image" type="button">Apply image</button>
+        <label>Image fit <select id="ed-fit"><option>cover</option><option>contain</option><option>auto</option></select></label>
+        <label>Image position <input id="ed-position" type="text" placeholder="center center"></label>
+        <button id="ed-clear-background" type="button">Remove background image</button>
+      </details>
+      <details><summary>Layout and spacing</summary>
+        <label>Padding <input id="ed-padding" type="text" placeholder="80px 24px"></label>
+        <label>Margin <input id="ed-margin" type="text" placeholder="0 auto"></label>
+        <div class="ed-pair"><label>Width <input id="ed-width" type="text" placeholder="100%"></label><label>Max width <input id="ed-max-width" type="text" placeholder="900px"></label></div>
+        <label>Minimum height <input id="ed-min-height" type="text" placeholder="500px"></label>
+        <label>Display <select id="ed-display"><option value="">Default</option><option>block</option><option>flex</option><option>grid</option><option>none</option></select></label>
+        <label>Columns <input id="ed-columns" type="text" placeholder="1fr 1fr"></label>
+        <label>Gap <input id="ed-gap" type="text" placeholder="40px"></label>
+      </details>
+      <details open><summary>Structure</summary>
+        <div class="ed-actions"><button id="ed-up" type="button">Move up</button><button id="ed-down" type="button">Move down</button><button id="ed-duplicate" type="button">Duplicate</button><button id="ed-delete" type="button">Delete</button></div>
+        <label>Move destination <select id="ed-destination"></select></label>
+        <div class="ed-actions"><button id="ed-move-before" type="button">Move before</button><button id="ed-move-inside" type="button">Move inside</button></div>
+        <label>Add <select id="ed-add-kind"><option value="section">Section</option><option value="h2">Heading</option><option value="p">Paragraph</option><option value="a">Link</option><option value="div">Container</option><option value="img">Image</option></select></label>
+        <button id="ed-add" type="button">Add inside selected element</button>
+        <button id="ed-shared" type="button">Use this header or footer on all pages</button>
+      </details>
+      <details><summary>Page sections</summary><ol id="ed-sections"></ol></details>
+      <details><summary>Advanced</summary>
+        <label>Element HTML <textarea id="ed-html" rows="6"></textarea></label><button id="ed-apply-html" type="button">Apply HTML</button>
+        <label>Site CSS <textarea id="ed-css" rows="8"></textarea></label><button id="ed-apply-css" type="button">Apply CSS</button>
+        <button id="ed-backup" type="button">Download draft backup</button>
+        <label>Restore draft <input id="ed-restore" type="file" accept="application/json,.json"></label>
+      </details>
+    </aside>
+    <div class="ed-canvas-area"><div class="ed-width-bar"><label>Canvas width <select id="ed-width-preset"><option value="100%">Responsive</option><option value="390px">Mobile</option><option value="768px">Tablet</option></select></label><button id="ed-open-controls" type="button">Edit selected element</button></div><div id="ed-canvas"></div></div>
+  </div>
+</div>
