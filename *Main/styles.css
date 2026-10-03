@@ -65,3 +65,9 @@ footer{padding:70px 0 28px;border-top:1px solid var(--mn-rule)}.footer-content{d
  .people-links{gap:18px}
  .wordmark{font-size:25px}
 }
+
+.wordmark,.footer-wordmark{font-family:Georgia,'Times New Roman',serif;font-size:28px;letter-spacing:.10em;line-height:1.05;font-weight:400}
+.wordmark-small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:400;letter-spacing:.38em;line-height:1.4;margin-top:9px}
+.generation-story{padding:30px 0 105px}
+.founder-heading{margin-bottom:45px}.founder-heading h2{margin-top:16px}
+@media(max-width:700px){.wordmark,.footer-wordmark{font-size:25px}.generation-story{padding:10px 0 70px}}
