@@ -33,3 +33,6 @@ Education includes a Women in the Family training page. Field Programs includes 
 
 ## Proposed brand architecture — discussion pending
 The user suggests MNerva Insights as a dedicated name for the women’s initiative: celebrating the insight and wisdom of women who lead a family and women who join one. Reflect this principle in the program copy now. Discuss whether the umbrella identity should become MNERVA / Institute for Governance & Generational Systems, reserving MNerva Insights for the women’s initiative, before changing all institutional naming.
+
+## Confirmed brand and research funding direction
+The umbrella brand is lowercase mnerva, with Institute for Governance & Generational Systems beneath the wordmark. MNerva Insights is the women’s initiative, represented in Education and Field Programs. Research receives a small homepage signpost instead of a fourth full-size practice step. mnerva will organize topics and collaborations and seek external funding; research can also receive an allocation from institutional financing. The research page invites collaborators and funding partners, without advertising grants that are not yet funded. The legal entity name in Privacy is unchanged.
