@@ -36,3 +36,6 @@ The user suggests MNerva Insights as a dedicated name for the women’s initiati
 
 ## Confirmed brand and research funding direction
 The umbrella brand is lowercase mnerva, with Institute for Governance & Generational Systems beneath the wordmark. MNerva Insights is the women’s initiative, represented in Education and Field Programs. Research receives a small homepage signpost instead of a fourth full-size practice step. mnerva will organize topics and collaborations and seek external funding; research can also receive an allocation from institutional financing. The research page invites collaborators and funding partners, without advertising grants that are not yet funded. The legal entity name in Privacy is unchanged.
+
+## Yellow / bold whitespace draft — 3 October 2026
+Homepage sharply reduced; white opening, warm yellow manifesto, ink blue type, independent visual identity. Approved lines: Intelligence for complex decisions. Wisdom for human relationships. Advisory replaces Consulting in visible navigation; Rising Generation development distinguished from governance succession. Education groups communication/negotiation, judgment/decisions, purpose/philanthropy. MNerva Insights is a developing women’s peer community. Neurodiversity and disability added to Advisory. Field images stay on secondary pages. Full draft remains unpublished.
